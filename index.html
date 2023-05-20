@@ -2,8 +2,9 @@
 <head>
     <title>Time Input Example</title>
 </head>
-    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=nlYlNF30bVg" frameborder="0" allowfullscreen></iframe>
 <body>
+    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=nlYlNF30bVg" frameborder="0" allowfullscreen></iframe>
+
     <form>
         <label for="timeInput">Hour:</label>
         <input type="number" id="hour" name="hour">
@@ -11,8 +12,23 @@
     </form>
     <form>
         <label for="timeInput">Minute:</label>
-        <input type="number" id="hour" name="hour">
+        <input type="number" id="minute" name="minute">
         <input type="submit" value="Submit">
     </form>
+
+    <title>Time Set</title>
+    <script>
+        function printNumber() {
+            var number = document.getElementById("hour").value;
+            document.getElementById("time").textContent = number;
+        }
+    </script>
+
+    <body>
+        <h1>Number Printing</h1>
+        <input type="number" id="hour">
+        <button onclick="printNumber()">Print</button>
+        <p id="result"></p>
+    </body>
 </body>
 </html>
