@@ -14,23 +14,11 @@
         printButton.addEventListener("click", function() {
             var numberInput = document.getElementById("numberInput");
             var userInput = numberInput.value;
-            localStorage.setItem("enteredNumber", numberInput);
             document.getElementById("result").innerHTML = "User entered: " + userInput;
-        }
-                                    
-         window.onload = function() {
-            var storedNumber = localStorage.getItem("enteredNumber");
-            if (storedNumber) {
-                document.getElementById("numberInput").value = storedNumber;
-                document.getElementById("result").innerHTML = "Time Entered: " + storedNumber;
-            }                           
-                                    );
+        });
     </script>
 </body>
 </html>
-
-
-
 
 
 
