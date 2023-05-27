@@ -6,7 +6,16 @@
         function printNumber() {
             var number = document.getElementById("numberInput").value;
             document.getElementById("result").innerHTML = "Time Entered: " + number;
+            localStorage.setItem("enteredNumber", number);
         }
+
+        window.onload = function() {
+            var storedNumber = localStorage.getItem("enteredNumber");
+            if (storedNumber) {
+                document.getElementById("numberInput").value = storedNumber;
+                document.getElementById("result").innerHTML = "Time Entered: " + storedNumber;
+            }
+        };
     </script>
 </head>
 <body>
