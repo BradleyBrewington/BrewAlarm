@@ -7,23 +7,23 @@
     <h1>Time as an Integer 24 hour</h1>
     <input type="number" id="numberInput" value="">
     <button id="printButton">Print</button>
-    <div id="result"><span>User entered: 42</span></div>
-
+    <div id="result"><span id="userInputSpan">User entered: </span></div>
 
     <script>
         var numberInput = document.getElementById("numberInput");
         var printButton = document.getElementById("printButton");
-        var resultDiv = document.getElementById("result");
+        var userInputSpan = document.getElementById("userInputSpan");
 
         // Retrieve the previously entered value from localStorage
         var storedValue = localStorage.getItem("userInput");
         if (storedValue) {
             numberInput.value = storedValue;
+            userInputSpan.textContent = "User entered: " + storedValue;
         }
 
         printButton.addEventListener("click", function() {
             var userInput = numberInput.value;
-            resultDiv.innerHTML = "User entered: " + userInput;
+            userInputSpan.textContent = "User entered: " + userInput;
 
             // Store the value in localStorage
             localStorage.setItem("userInput", userInput);
@@ -31,6 +31,3 @@
     </script>
 </body>
 </html>
-
-
-
