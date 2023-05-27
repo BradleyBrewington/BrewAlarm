@@ -2,26 +2,27 @@
 <html>
 <head>
     <title>Number Printing</title>
-    <script>
-        function printNumber() {
-            var number = document.getElementById("numberInput").value;
-            document.getElementById("result").innerHTML = "Time Entered: " + number;
-            localStorage.setItem("enteredNumber", number);
-        }
-
-        window.onload = function() {
-            var storedNumber = localStorage.getItem("enteredNumber");
-            if (storedNumber) {
-                document.getElementById("numberInput").value = storedNumber;
-                document.getElementById("result").innerHTML = "Time Entered: " + storedNumber;
-            }
-        };
-    </script>
 </head>
 <body>
     <h1>Time as an Integer 24 hour</h1>
-    <input type="number" id="numberInput">
-    <button onclick="printNumber()">Print</button>
+    <input type="number" id="numberInput" value="">
+    <button id="printButton">Print</button>
     <div id="result"></div>
+
+    <script>
+        var printButton = document.getElementById("printButton");
+        printButton.addEventListener("click", function() {
+            var numberInput = document.getElementById("numberInput");
+            var userInput = numberInput.value;
+            document.getElementById("result").innerHTML = "User entered: " + userInput;
+        });
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
