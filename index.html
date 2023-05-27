@@ -10,16 +10,26 @@
     <div id="result"></div>
 
     <script>
+        var numberInput = document.getElementById("numberInput");
         var printButton = document.getElementById("printButton");
+        var resultDiv = document.getElementById("result");
+
+        // Retrieve the previously entered value from localStorage
+        var storedValue = localStorage.getItem("userInput");
+        if (storedValue) {
+            numberInput.value = storedValue;
+        }
+
         printButton.addEventListener("click", function() {
-            var numberInput = document.getElementById("numberInput");
             var userInput = numberInput.value;
-            document.getElementById("result").innerHTML = "User entered: " + userInput;
+            resultDiv.innerHTML = "User entered: " + userInput;
+
+            // Store the value in localStorage
+            localStorage.setItem("userInput", userInput);
         });
     </script>
 </body>
 </html>
-
 
 
 
